@@ -1,4 +1,6 @@
 Houread::Application.routes.draw do
+  get "user/sign_up"
+
   resources :topics
 
   get "home/index"
