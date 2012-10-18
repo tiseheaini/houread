@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121018111859) do
+ActiveRecord::Schema.define(:version => 20121018112444) do
 
   create_table "topics", :force => true do |t|
     t.text     "body",                      :null => false
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(:version => 20121018111859) do
     t.integer  "unlike",     :default => 0
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "username",                         :null => false
+    t.string   "password_hash",                    :null => false
+    t.string   "password_salt",                    :null => false
+    t.boolean  "admin",         :default => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
 end
