@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :username, :password_hash, :password_salt
+  attr_accessible :username, :password
 
   def password
     @password

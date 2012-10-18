@@ -1,2 +1,13 @@
-<h1>User#sign_up</h1>
-<p>Find me in app/views/user/sign_up.html.erb</p>
+<div class="mess-frame">
+    <span>登录</span>
+</div>
+<div class="form-login-style">
+<%= form_tag user_sign_up_action_path do -%>
+  <label for="login" class="form-label">帐号：</label>
+	  <%= text_field_tag :login, params[:login] %><br />
+  <label for="password" class="form-label">密码：</label>
+	  <%= password_field_tag :password, params[:password] %><br />
+			  
+	  <%= submit_tag "登录", :class => "form-submit" %>
+<% end %>
+</div>

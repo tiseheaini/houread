@@ -1,5 +1,6 @@
 Houread::Application.routes.draw do
-  get "user/sign_up"
+	post "user/sign_up_action"
+  get  "user/sign_up"
 
   resources :topics
 
