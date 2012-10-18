@@ -4,6 +4,7 @@ class CreateTopics < ActiveRecord::Migration
       t.text :body,     :null => false
       t.integer :like,  :default => 0
       t.integer :unlike,:default => 0
+      t.integer :timeint
 
       t.timestamps
     end

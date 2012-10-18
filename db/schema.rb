@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20121018112444) do
     t.text     "body",                      :null => false
     t.integer  "like",       :default => 0
     t.integer  "unlike",     :default => 0
+    t.integer  "timeint"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
   end
