@@ -1,4 +1,6 @@
 Houread::Application.routes.draw do
+  resources :topics
+
   get "home/index"
 
   root :to => 'home#index'

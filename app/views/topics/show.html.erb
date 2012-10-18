@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Body:</b>
+  <%= @topic.body %>
+</p>
+
+<p>
+  <b>Like:</b>
+  <%= @topic.like %>
+</p>
+
+<p>
+  <b>Unlike:</b>
+  <%= @topic.unlike %>
+</p>
+
+
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Back', topics_path %>
