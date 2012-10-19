@@ -5,6 +5,7 @@
     <th>Body</th>
     <th>Like</th>
     <th>Unlike</th>
+    <th>timeint</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,6 +16,7 @@
     <td><%= topic.body %></td>
     <td><%= topic.like %></td>
     <td><%= topic.unlike %></td>
+    <td><%= topic.timeint %></td>
     <td><%= link_to 'Show', topic %></td>
     <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
     <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>

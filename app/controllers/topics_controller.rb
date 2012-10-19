@@ -41,6 +41,11 @@ class TopicsController < ApplicationController
   # POST /topics.json
   def create
     @topic = Topic.new(params[:topic])
+		if last_article = Topic.last
+			@topic.timeint = Topic.addtimeint(last_article.timeint)
+		else
+		  @topic.timeint = Topic.maketimeint
+		end
 
     respond_to do |format|
       if @topic.save
@@ -74,6 +79,11 @@ class TopicsController < ApplicationController
   def destroy
     @topic = Topic.find(params[:id])
     @topic.destroy
+		@remain_topics = Topic.where("timeint > ?", @topic.timeint)
+		@remain_topics.each do |topic|
+		  topic.timeint = Topic.deltimeint(topic.timeint)
+			topic.save
+		end
 
     respond_to do |format|
       format.html { redirect_to topics_url }
