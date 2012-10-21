@@ -2,3 +2,13 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+body {
+  background-color:gainsboro;
+}
+.header {
+  background-color:white;
+}
+.main-cont {
+  margin-top: 20px;
+	min-height: 300px;
+}
