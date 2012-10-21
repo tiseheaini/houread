@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121018112444) do
+ActiveRecord::Schema.define(:version => 20121021150920) do
+
+  create_table "kindeditor_assets", :force => true do |t|
+    t.string   "asset"
+    t.string   "file_name"
+    t.integer  "file_size"
+    t.string   "file_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "topics", :force => true do |t|
     t.text     "body",                      :null => false
