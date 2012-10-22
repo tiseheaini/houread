@@ -2,3 +2,32 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+.topic-main {
+  padding: 35px;
+  margin-top: 20px;
+  background-color: white;
+	overflow:hidden;
+}
+.topic-main-sidebar {
+  width: 210px;
+	margin-left: 0px;
+	float:left;
+}
+.topic-main-sidebar li {
+  padding-left: 25px;
+  height: 35px;
+}
+.topic-main-cont {
+	width: 660px;
+  margin-left: 0px;
+  float:right;
+}
+.like {
+  width: 28px;
+}
+.unlike {
+  width: 42px;
+}
+.edit, .destroy {
+  width: 29px;
+}
