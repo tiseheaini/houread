@@ -8,6 +8,9 @@ body {
 .header {
   background-color:white;
 }
+.home-navbar {
+  border: 0px none white;
+}
 .home-main-cont {
   background-color:white;
   margin-top: 20px;
