@@ -21,7 +21,7 @@
 
       <% @topics.each do |topic| %>
         <tr>
-          <td><%= strip_tags(truncate topic.body, :length => 85) %></td>
+          <td><%= link_to strip_tags(truncate topic.body, :length => 85), topic %></td>
           <td class="like" style="text-align: center;"><%= topic.like %></td>
           <td class="unlike" style="text-align: center;"><%= topic.unlike %></td>
           <td class="edit"><%= link_to '编辑', edit_topic_path(topic) %></td>

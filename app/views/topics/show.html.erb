@@ -1,25 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Body:</b>
-  <%= (@topic.body).html_safe %>
-</p>
-
-<p>
-  <b>Like:</b>
-  <%= @topic.like %>
-</p>
-
-<p>
-  <b>Unlike:</b>
-  <%= @topic.unlike %>
-</p>
-
-<p>
-  <b>Timeint:</b>
-  <%= @topic.timeint %>
-</p>
-
-
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+<div class="container">
+		<div class="hero-unit home-main-cont">
+		<%= (@topic.body).html_safe %>
+		</div>
+</div>
