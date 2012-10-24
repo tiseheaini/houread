@@ -1,7 +1,7 @@
 class Topic < ActiveRecord::Base
   attr_accessible :body, :like, :unlike, :timeint
 
-  def self.addtimeint(timeint)
+  def self.add_timeint(timeint)
   	if timeint.to_s[8..9].to_i + 1 > 19
 		  time =  Time.local(timeint.to_s[0..3], timeint.to_s[4..5], timeint.to_s[6..7]).tomorrow
 			timeint = time.year.to_s + time.month.to_s + time.day.to_s + "07"
@@ -10,7 +10,7 @@ class Topic < ActiveRecord::Base
 		end
   end
 
-	def self.maketimeint
+	def self.make_timeint
 		time = Time.now
 		if (time.hour - 6) > 12
 			time = time.tomorrow
@@ -20,7 +20,7 @@ class Topic < ActiveRecord::Base
 		end
 	end
 
-	def self.deltimeint(timeint)
+	def self.del_timeint(timeint)
   	if timeint.to_s[8..9].to_i - 7 <= 0
 		  time =  Time.local(timeint.to_s[0..3], timeint.to_s[4..5], timeint.to_s[6..7]).yesterday
 			timeint = time.year.to_s + time.month.to_s + time.day.to_s + "19"
