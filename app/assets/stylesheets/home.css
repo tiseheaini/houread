@@ -16,3 +16,10 @@ body {
   margin-top: 20px;
 	min-height: 300px;
 }
+#countdown {
+  position:relative;
+	bottom: -87px;
+	left: 641px;
+	width: 224px;
+	display:inline-block;
+}

@@ -16,7 +16,7 @@ class Topic < ActiveRecord::Base
 			time = time.tomorrow
 			timeint = time.year.to_s + time.month.to_s + time.day.to_s + "07"
 		else
-		  timeint = time.year.to_s + time.month.to_s + time.day.to_s + time.hour - 6
+		  timeint = time.year.to_s + time.month.to_s + time.day.to_s + (time.hour - 6).to_s
 		end
 	end
 

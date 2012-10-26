@@ -11,7 +11,7 @@ var countdown = function(){
 	var settime = function(){
 	  if (h == 0 && m == 0 && s == 0) {
 	    $("#countdown").css("visibility","hidden");
-	    window.location.href="/home/index";
+	    window.location.href="/";
 	  }
 	  if (s == 0) { s = 60; }
 	  if (s == 60) {
