@@ -16,6 +16,9 @@ body {
   margin-top: 20px;
 	min-height: 300px;
 }
+.qqshare, .sinashare, .163share, .doubanshare {
+  display:inline-block;
+}
 #countdown {
   position:relative;
 	bottom: -87px;
