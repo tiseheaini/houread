@@ -16,13 +16,18 @@ body {
   margin-top: 20px;
 	min-height: 300px;
 }
+.sharesite {
+  overflow:hidden;
+	position:relative;
+	bottom: -70px;
+}
 .qqshare, .sinashare, .163share, .doubanshare {
   display:inline-block;
 }
 #countdown {
   position:relative;
-	bottom: -87px;
-	left: 641px;
-	width: 224px;
+	bottom: -118px;
+	left: 503px;
+	width: 330px;
 	display:inline-block;
 }

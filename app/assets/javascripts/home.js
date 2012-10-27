@@ -24,7 +24,7 @@ var countdown = function(){
 	    }
 	  }
 	  s -= 1;
-		$("#countdown").html('<p><span>还有'+h+' 小时'+m+' 分钟'+s+'秒</span></p>')
+		$("#countdown").html('<p><span>离下一篇文章出现还有'+m+' 分钟'+s+'秒</span></p>')
 	}
 
   // 开始执行程序
