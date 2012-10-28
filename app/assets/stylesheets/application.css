@@ -11,3 +11,18 @@
  *= require_self
  *= require_tree .
  */
+ .footsub-about,.footsub-blog,.footsub-link {
+   float:left;
+ }
+ .footsub-about {
+   width: 360px;
+ }
+ .footsub-blog {
+   width: 227px;
+ }
+ .footsub-blog .f-title {
+   padding-left: 31px;
+ }
+ .footsub-link {
+   width: 160px;
+ }
