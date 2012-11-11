@@ -14,20 +14,20 @@ body {
 .home-main-cont {
   background-color:white;
   margin-top: 20px;
-	min-height: 300px;
+  min-height: 300px;
 }
 .sharesite {
   overflow:hidden;
-	position:relative;
-	bottom: -70px;
+  position:relative;
+  bottom: -25px;
 }
 .qqshare, .sinashare, .163share, .doubanshare {
   display:inline-block;
 }
 #countdown {
   position:relative;
-	bottom: -118px;
-	left: 503px;
-	width: 330px;
-	display:inline-block;
+  bottom: -71px;
+  left: 503px;
+  width: 330px;
+  display:inline-block;
 }
