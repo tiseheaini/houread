@@ -14,5 +14,3 @@
 //= require jquery_ujs
 //= require kindeditor
 //= require_tree .
-
-$(document).ready(countdown)

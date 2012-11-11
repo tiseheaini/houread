@@ -1,12 +1,15 @@
 <div class="container">
-		<div class="hero-unit home-main-cont span10">
-		  <%= (@topic.body).html_safe %>
+	<script type="text/javascript">
+          $(document).ready(countdown)
+	</script>
+	<div class="hero-unit home-main-cont span10">
+	  <%= (@topic.body).html_safe %>
 
-		  <div class="article-foot">
-		    <%= render :partial => "shared/home/likebox.html.erb" %>
-		    <%= render :partial => "shared/home/siteshared.html.erb" %>
-		    <div id="countdown" style="color:red;padding-top:7px;" mce_style="color:red"></div>
-		  </div>
-		</div>
+	  <div class="article-foot">
+	    <%= render :partial => "shared/home/likebox.html.erb" %>
+	    <%= render :partial => "shared/home/siteshared.html.erb" %>
+	    <div id="countdown" style="color:red;padding-top:7px;" mce_style="color:red"></div>
+	  </div>
+	</div>
 </div>
 <span id="time" style="display:none;"><%= @time %></span>
