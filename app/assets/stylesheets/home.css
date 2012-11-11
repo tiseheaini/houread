@@ -16,18 +16,23 @@ body {
   margin-top: 20px;
   min-height: 300px;
 }
+.article-foot {
+  margin-top: 37px;
+  margin-left: -11px;
+}
+.likebox {
+  float:left;
+  padding-top: 2px;
+}
 .sharesite {
+  float:left;
   overflow:hidden;
-  position:relative;
-  bottom: -25px;
+  margin-left: 24px;
 }
 .qqshare, .sinashare, .163share, .doubanshare {
   display:inline-block;
 }
 #countdown {
-  position:relative;
-  bottom: -71px;
-  left: 503px;
   width: 330px;
-  display:inline-block;
+  float:right;
 }
