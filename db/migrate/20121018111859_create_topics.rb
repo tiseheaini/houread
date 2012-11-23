@@ -2,8 +2,8 @@ class CreateTopics < ActiveRecord::Migration
   def change
     create_table :topics do |t|
       t.text :body,     :null => false
-      t.string :likeable,   :default => ""
-      t.string :unlikeable, :default => ""
+      t.text :likeable
+      t.text :unlikeable
       t.integer :timeint
 
       t.timestamps
