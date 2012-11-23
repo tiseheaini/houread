@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(:version => 20121021150920) do
 
   create_table "topics", :force => true do |t|
     t.text     "body",                       :null => false
-    t.string   "like",       :default => ""
-    t.string   "unlike",     :default => ""
+    t.string   "likeable",   :default => ""
+    t.string   "unlikeable", :default => ""
     t.integer  "timeint"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
