@@ -1,3 +1,4 @@
+# encoding: utf-8
 class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
@@ -35,6 +36,28 @@ class TopicsController < ApplicationController
   # GET /topics/1/edit
   def edit
     @topic = Topic.find(params[:id])
+  end
+
+  def likeable
+    @topic = Topic.last
+    @topicarr = @topic.likeable.to_s.split
+
+    if !@topicarr.include?(request.remote_ip.to_s)
+      @topic.likeable = @topic.likeable.to_s + request.remote_ip.to_s + ' '
+      @topic.save
+      render :text => @topic.likeable.to_s.split.length 
+    end
+  end
+
+  def unlikeable
+    @topic = Topic.last
+    @topicarr = @topic.unlikeable.to_s.split
+
+    if !@topicarr.include?(request.remote_ip.to_s)
+      @topic.unlikeable = @topic.unlikeable.to_s + request.remote_ip.to_s + ' '
+      @topic.save
+      render :text => @topic.unlikeable.to_s.split.length 
+    end
   end
 
   # POST /topics

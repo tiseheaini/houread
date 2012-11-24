@@ -22,10 +22,10 @@
   margin-left: 0px;
   float:right;
 }
-.like {
+.topic-like {
   width: 28px;
 }
-.unlike {
+.topic-unlike {
   width: 42px;
 }
 .edit, .destroy {

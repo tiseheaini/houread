@@ -17,8 +17,34 @@ body {
   min-height: 300px;
 }
 .article-foot {
-  margin-top: 37px;
+  overflow:hidden;
   margin-left: -11px;
+}
+.likebox-info {
+  width: 790px;
+  height: 37px;
+}
+.like-info {
+  width: 0px;
+  height: 17px;
+  padding-right: 28px;
+  padding-top: 5px;
+  margin-left: 11px;
+}
+.unlike-info {
+  width: 0px;
+  height: 17px;
+  padding-right: 28px;
+  padding-top: 5px;
+  margin-left: 69px;
+}
+.like-error-info,.unlike-error-info {
+  width: 98px;
+  height: 17px;
+  padding-left: 9px;
+  padding-right: 7px;
+  padding-top: 5px;
+  margin-left: 2px;
 }
 .likebox {
   float:left;
