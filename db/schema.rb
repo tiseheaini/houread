@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20121021150920) do
   end
 
   create_table "topics", :force => true do |t|
-    t.string   "title"
+    t.string   "title",      :null => false
     t.text     "body",       :null => false
     t.text     "likeable"
     t.text     "unlikeable"
