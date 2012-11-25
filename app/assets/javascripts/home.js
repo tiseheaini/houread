@@ -57,7 +57,7 @@ var unlikeable = function(){
       $.get("/topics/unlikeable",
           function(data){
 	    $(".unlike-info").css("display","block");
-            $(".home-unlike span").html("踩 " + data);
+            $(".home-unlike span").html("踩 -" + data);
 	    $(".unlike-info").fadeOut(fadetime);
 	  }
       )
