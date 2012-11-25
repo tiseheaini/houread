@@ -12,9 +12,14 @@
   <% end %>
 
   <div class="field">
-		<%= f.kindeditor :body, :width => 670, :height => 300 %>
+    <%= f.label "标题" %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.kindeditor :body, :width => 720, :height => 300 %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "发布", :class => "btn" %>
   </div>
 <% end %>

@@ -5,6 +5,10 @@
           $(document).ready(unlikeable)
 	</script>
 	<div class="hero-unit home-main-cont span10">
+	  <div class="h-topic-title">
+	    <%= (@topic.title).html_safe %>
+	  </div>
+	  <div class="h-topic-articleline"></div>
 	  <%= (@topic.body).html_safe %>
 
 	  <div class="article-foot">

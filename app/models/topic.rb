@@ -1,5 +1,5 @@
 class Topic < ActiveRecord::Base
-  attr_accessible :body, :like, :unlike, :timeint
+  attr_accessible :title, :body, :like, :unlike, :timeint
 
   def self.add_timeint(timeint)
   	if timeint.to_s[8..9].to_i + 1 > 19

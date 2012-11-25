@@ -9,16 +9,16 @@
 	overflow:hidden;
 }
 .topic-main-sidebar {
-  width: 210px;
-	margin-left: 0px;
-	float:left;
+  width: 110px;
+  margin-left: 0px;
+  float:left;
 }
 .topic-main-sidebar li {
   padding-left: 25px;
   height: 35px;
 }
 .topic-main-cont {
-	width: 660px;
+  width: 718px;
   margin-left: 0px;
   float:right;
 }
@@ -30,4 +30,11 @@
 }
 .edit, .destroy {
   width: 29px;
+}
+/** topics#new **/
+#topic_title {
+  width: 707px;
+}
+.actions {
+  margin-top: 20px;
 }

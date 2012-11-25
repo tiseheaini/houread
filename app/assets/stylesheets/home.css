@@ -11,6 +11,15 @@ body {
 .home-navbar {
   border: 0px none white;
 }
+.h-topic-title {
+  font-size: 20px;
+}
+.h-topic-articleline {
+  height: 1px;
+  width: 100%;
+  border-top: #DDD 1px dashed;
+  margin: 20px 0;
+}
 .home-main-cont {
   background-color:white;
   margin-top: 20px;
