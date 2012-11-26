@@ -10,6 +10,9 @@ gem 'therubyracer'
 gem 'rails_kindeditor', '~> 0.3.0'
 gem 'mysql2'
 
+group :development do
+  gem 'thin'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
