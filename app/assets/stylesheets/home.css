@@ -101,3 +101,12 @@ body {
   width: 330px;
   float:right;
 }
+/** home-footer **/
+#home-footer {
+  width: 960px;
+}
+.footer-cont {
+  width: 840px;
+  margin-left: auto;
+  margin-right: auto;
+}
