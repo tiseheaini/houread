@@ -3,13 +3,23 @@
   They will automatically be included in application.css.
 */
 body {
-  background-color:gainsboro;
+  background-image:url("main_bg.gif");
 }
 .header {
   background-color:white;
 }
 .home-navbar {
   border: 0px none white;
+}
+#home-navbar {
+  background-color:#474847;
+  padding-top: 16px;
+  padding-left: 20px;
+}
+.nav-logo {
+  height: 29px;
+  font-size: 23px;
+  color: white;
 }
 .h-topic-title {
   font-size: 20px;
