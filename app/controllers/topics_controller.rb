@@ -15,11 +15,11 @@ class TopicsController < ApplicationController
   # GET /topics/1.json
   def show
     @topic = Topic.find(params[:id])
+    @topiclike = @topic.likeable.to_s.split.length
+    @topicunlike = @topic.unlikeable.to_s.split.length
+    @time = 3600 - (Time.now.min * 60 + Time.now.sec)
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @topic }
-    end
+    render :template => 'home/index'
   end
 
   # GET /topics/new
