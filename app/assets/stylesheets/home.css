@@ -74,20 +74,14 @@ body {
   height: 37px;
 }
 .like-info {
-  width: 0px;
+  width: 44px;
   height: 17px;
-  padding-right: 28px;
+  padding-left: 23px;
+  padding-right: 7px;
   padding-top: 5px;
-  margin-left: 11px;
+  margin-left: 19px;
 }
-.unlike-info {
-  width: 0px;
-  height: 17px;
-  padding-right: 28px;
-  padding-top: 5px;
-  margin-left: 69px;
-}
-.like-error-info,.unlike-error-info {
+.like-error-info {
   width: 98px;
   height: 17px;
   padding-left: 9px;

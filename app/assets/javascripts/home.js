@@ -31,42 +31,44 @@ var countdown = function(){
 
 var likeable = function(){
   var fadetime = 1800;
-  $(".home-like").click(
+  $(".btn-like").click(
     function(){
       $.get("/topics/likeable", 
-            function(data){
-	      $(".like-info").css("display","block")
-              $(".home-like span").html("顶 " + data);
-	      $(".like-info").fadeOut(fadetime);
+          function(data){
+            if (data.status){
+              $(".like-info").css("display","block");
+              $(".like-info").html(data.text);
+              $(".btn-like span").html("顶 " + data.count);
+              $(".like-info").fadeOut(fadetime);
+            }else{
+              $(".like-error-info").css("display","block");
+              $(".like-error-info").html(data.text);
+              $(".like-error-info").fadeOut(fadetime);
             }
+          }, "json"
       )
-       .error(
-         function(){
-	   $(".like-error-info").css("display","block")
-	   $(".like-error-info").fadeOut(fadetime);
-	 }
-       )
     }
   )
 }
 
 var unlikeable = function(){
   var fadetime = 2100;
-  $(".home-unlike").click(
+  $(".btn-unlike").click(
     function(){
       $.get("/topics/unlikeable",
           function(data){
-	    $(".unlike-info").css("display","block");
-            $(".home-unlike span").html("踩 -" + data);
-	    $(".unlike-info").fadeOut(fadetime);
-	  }
+            if (data.status){
+              $(".like-info").css("display","block");
+              $(".like-info").html(data.text);
+              $(".btn-unlike span").html("踩 -" + data.count);
+              $(".like-info").fadeOut(fadetime);
+            }else{
+              $(".like-error-info").css("display","block");
+              $(".like-error-info").html(data.text);
+              $(".like-error-info").fadeOut(fadetime);
+            }
+          },"json"
       )
-       .error(
-         function(){
-	   $(".unlike-error-info").css("display","block")
-	   $(".unlike-error-info").fadeOut(fadetime);
-	 }
-       )
     }
   )
 }

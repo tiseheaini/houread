@@ -44,8 +44,11 @@ class TopicsController < ApplicationController
 
     if !@topicarr.include?(request.remote_ip.to_s)
       @topic.likeable = @topic.likeable.to_s + request.remote_ip.to_s + ' '
+      @count = @topic.likeable.to_s.split.length.to_s
       @topic.save
-      render :text => @topic.likeable.to_s.split.length 
+      render :json => {:status => true, :text => "顶 +1", :count => @count}
+    else
+      render :json => {:status => false, :text => "你已经点击过了"}
     end
   end
 
@@ -55,8 +58,11 @@ class TopicsController < ApplicationController
 
     if !@topicarr.include?(request.remote_ip.to_s)
       @topic.unlikeable = @topic.unlikeable.to_s + request.remote_ip.to_s + ' '
+      @count = @topic.unlikeable.to_s.split.length.to_s
       @topic.save
-      render :text => @topic.unlikeable.to_s.split.length 
+      render :json => {:status => true, :text => "踩 -1", :count => @count}
+    else
+      render :json => {:status => false, :text => "你已经点击过了"}
     end
   end
 
