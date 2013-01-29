@@ -30,7 +30,7 @@ var countdown = function(){
 }
 
 var likeable = function(){
-  var fadetime = 1800;
+  var fadetime = 900;
   $(".btn-like").click(
     function(){
       $.get("/topics/likeable", 
@@ -52,7 +52,7 @@ var likeable = function(){
 }
 
 var unlikeable = function(){
-  var fadetime = 2100;
+  var fadetime = 900;
   $(".btn-unlike").click(
     function(){
       $.get("/topics/unlikeable",
