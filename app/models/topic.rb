@@ -11,14 +11,14 @@ class Topic < ActiveRecord::Base
     end
   end
 
-  ## make_timeint 用于生成当前时间的timeint串
-  def self.make_timeint
+  ## current_timeint 用于生成当前时间的timeint串
+  def self.current_timeint
     time = Time.now
-    if (time.hour - 6) > 12
-      time = time.tomorrow
-      timeint = time.year.to_s + time.month.to_s + time.day.to_s + "07"
+    if (9..21).include?(time.hour)
+      timeint = time.year.to_s + ("%02d" % time.month.to_s) + ("%02d" % time.day.to_s) + (time.hour - 6).to_s
     else
-      timeint = time.year.to_s + time.month.to_s + time.day.to_s + (time.hour - 6).to_s
+      time = time.tomorrow
+      timeint = time.year.to_s + ("%02d" % time.month.to_s) + ("%02d" % time.day.to_s) + "07"
     end
   end
   

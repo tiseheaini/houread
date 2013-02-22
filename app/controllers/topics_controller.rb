@@ -70,10 +70,10 @@ class TopicsController < ApplicationController
   # POST /topics.json
   def create
     @topic = Topic.new(params[:topic])
-    if @timeint = Topic.find_by_timeint(Topic.make_timeint)
+    if @timeint = Topic.find_by_timeint(Topic.current_timeint)
       @topic.timeint = Topic.add_timeint(@timeint.timeint)
     else
-      @topic.timeint = Topic.make_timeint
+      @topic.timeint = Topic.current_timeint
     end
 
     respond_to do |format|
