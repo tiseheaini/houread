@@ -22,8 +22,8 @@
       <% @topics.each do |topic| %>
         <tr>
           <td><%= link_to truncate(strip_tags(topic.body), :length => 80), topic %></td>
-          <td class="like" style="text-align: center;"><%= topic.likeable %></td>
-          <td class="unlike" style="text-align: center;"><%= topic.unlikeable %></td>
+          <td class="like" style="text-align: center;"><%= topic.likeable.to_s.split.length %></td>
+          <td class="unlike" style="text-align: center;"><%= topic.unlikeable.to_s.split.length %></td>
           <td class="edit"><%= link_to '编辑', edit_topic_path(topic) %></td>
           <td class="destroy"><%= link_to '删除', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
