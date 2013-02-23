@@ -3,11 +3,11 @@ class Topic < ActiveRecord::Base
 
   ## add_timeint 用于将传进来的timeint加1，且考虑时间问题
   def self.add_timeint(timeint)
-  	if timeint.to_s[8..9].to_i + 1 > 19
-      time =  Time.local(timeint.to_s[0..3], timeint.to_s[4..5], timeint.to_s[6..7]).tomorrow
-      timeint = time.year.to_s + time.month.to_s + time.day.to_s + "07"
+    if timeint[8..9].to_i >= 5
+      time =  Time.local(timeint[0..3], timeint[4..5], timeint[6..7]).tomorrow
+      timeint = time.year.to_s + ("%02d" % time.month) + ("%02d" % time.day) + "00"
     else
-      timeint = timeint.to_s[0..7] + sprintf("%02i", timeint.to_s[8..9].to_i + 1)
+      timeint = timeint[0..7] + sprintf("%02i", timeint[8..9].to_i + 1)
     end
   end
 
