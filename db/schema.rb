@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121021150920) do
+ActiveRecord::Schema.define(:version => 20130301095613) do
 
   create_table "kindeditor_assets", :force => true do |t|
     t.string   "asset"
@@ -30,15 +30,6 @@ ActiveRecord::Schema.define(:version => 20121021150920) do
     t.integer  "timeint"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "username",                         :null => false
-    t.string   "password_hash",                    :null => false
-    t.string   "password_salt",                    :null => false
-    t.boolean  "admin",         :default => false
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
   end
 
 end
