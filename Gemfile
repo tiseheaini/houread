@@ -9,6 +9,9 @@ gem 'sqlite3'
 gem 'therubyracer'
 gem 'rails_kindeditor', '~> 0.3.0'
 
+## devise and user Authentication
+gem 'devise'
+
 group :development do
   gem 'thin'
 end
