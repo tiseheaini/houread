@@ -1,8 +1,15 @@
-<div class="navbar">
-    <div class="container" id="home-navbar">
-        <div class="nav-logo">
-	  <span>时阅-十月清新</span>
-	</div>
-        <div class="nav-notice"></div>
+<div class="navbar" id="home-navbar">
+  <div class="container" style="width:940px;">
+    <div class="nav-logo">
+      <span>时阅-十月清新</span>
     </div>
+    <div class="nav-userbar">
+      <% if user_signed_in? %>
+        <span>帐号：</span><%= link_to current_user.email, current_user.email %>.<span>不是？</span>
+        <%= link_to "退出", destroy_user_session_path, :method => :delete %>
+      <% else %>
+        <%= link_to "登录", new_user_session_path %><span> | </span><%= link_to "注册", new_user_registration_path %>
+      <% end %>
+    </div>
+  </div>
 </div>

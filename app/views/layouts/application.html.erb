@@ -13,12 +13,6 @@
     <div class="header">
       <%= render :partial => "shared/home/header" %>
     </div>
-    <% unless notice.blank? %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% unless alert.blank? %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
 
     <%= yield %>
 
