@@ -1,5 +1,7 @@
 # encoding: utf-8
 class TopicsController < ApplicationController
+  before_filter :admin_validation
+
   # GET /topics
   # GET /topics.json
   def index
@@ -117,6 +119,16 @@ class TopicsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to topics_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+
+  def admin_validation
+    if user_signed_in? && current_user.role == "admin"
+      true
+    else
+      redirect_to root_path
     end
   end
 end
