@@ -1,6 +1,6 @@
 # encoding: utf-8
 class TopicsController < ApplicationController
-  before_filter :admin_validation
+  before_filter :admin_validation, :except => [:likeable, :unlikeable]
 
   # GET /topics
   # GET /topics.json
