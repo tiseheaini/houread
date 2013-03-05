@@ -108,9 +108,9 @@ body {
   width: 330px;
   float:right;
 }
-/** home-footer **/
+/**-- home-footer stylesheet --**/
 #home-footer {
-  width: 960px;
+  width: 940px;
 }
 .footer-cont {
   width: 840px;

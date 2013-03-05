@@ -14,7 +14,11 @@
       <%= render :partial => "shared/home/header" %>
     </div>
 
-    <%= yield %>
+    <div class="container">
+      <div id="main" style="width:960px;">
+        <%= yield %>
+      </div>
+    </div>
 
     <div class="footer">
       <%= render :partial => "shared/home/footer" %>
