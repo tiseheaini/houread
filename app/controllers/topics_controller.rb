@@ -1,6 +1,6 @@
 # encoding: utf-8
 class TopicsController < ApplicationController
-  before_filter :admin_validation, :except => [:likeable, :unlikeable]
+  before_filter :admin_validation, :except => [:likeable, :unlikeable, :subscribe_mail]
 
   # GET /topics
   # GET /topics.json
@@ -38,6 +38,38 @@ class TopicsController < ApplicationController
   # GET /topics/1/edit
   def edit
     @topic = Topic.find(params[:id])
+  end
+
+  def subscribe_mail
+    case params[:button]
+    when 'subscribe'
+      feed_mail = FeedMail.new(params[:feed_mail])
+      regexp = /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/
+      match_mail = regexp.match(params[:feed_mail][:email])
+
+      if match_mail
+        feed_mail.save
+        render :js => "feedMailAlert('alert-success','邮箱订阅成功');"
+      else
+        render :js => "feedMailAlert('alert-error','你输入的邮箱不合法');"
+      end
+    when 'unsubscribe'
+      regexp = /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/
+      match_mail = regexp.match(params[:feed_mail][:email])
+      if match_mail
+        feed_mail = FeedMail.where(:email => match_mail[0]).first
+
+        if feed_mail
+          feed_mail.destroy
+          render :js => "feedMailAlert('alert-success','邮箱退定成功');"
+        else
+          render :js => "feedMailAlert('alert-alert','你的邮箱没订阅');"
+        end
+        ####
+      else
+        render :js => "feedMailAlert('alert-error','你输入的邮箱不合法');"
+      end
+    end
   end
 
   def likeable

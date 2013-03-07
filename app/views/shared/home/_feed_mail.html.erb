@@ -1,0 +1,11 @@
+<div class="well well-large feed-mail">
+  <span>邮箱订阅</span>
+  <div class="home-noticeline"></div>
+  <div class="feed-mail-alert alert" style="display:none;text-align: center;">消息</div>
+  <%= form_for FeedMail.new, :url => subscribe_mail_topics_path, :html => { style: "margin:8px 0px 0px 0px;"}, :remote => true do |f| %>
+    <span class="help-block">输入邮箱可以订阅也可以退定</span>
+    <%= f.text_field :email %>
+    <%= f.button "订阅", :value => "subscribe" %>
+    <%= f.button "退定", :value => "unsubscribe" %>
+  <% end %>
+</div>

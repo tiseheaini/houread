@@ -46,12 +46,8 @@ body {
 }
 .home-main-notice {
   background-color:white;
-  margin-top: 20px;
-  margin-bottom: 24px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 18px;
-  padding-bottom: 23px;
+  margin: 20px 0px 24px 0px;
+  padding: 18px 10px 23px 10px;
   float:right;
 }
 .home-noticeline {
@@ -68,6 +64,15 @@ body {
   padding-bottom: 6px;
   float:right;
 }
+/**--- div.feed-mail stylesheet-**/
+.feed-mail {
+  width: 218px;
+  padding: 18px 10px 23px 10px;
+  margin-bottom: 30px;
+  background-color:white;
+  float:right;
+}
+/**-----------------------------**/
 .article-foot {
   overflow:hidden;
   margin-left: -11px;

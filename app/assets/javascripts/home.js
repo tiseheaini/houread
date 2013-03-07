@@ -95,3 +95,11 @@ var unlikeable = function(){
     }
   )
 }
+
+var feedMailAlert = function(alertType, alertMess){
+  $('.feed-mail-alert').html(alertMess);
+  $('.feed-mail-alert').addClass(alertType);
+  $('.feed-mail-alert').slideToggle();
+  setTimeout((function(){$('.feed-mail-alert').slideToggle();}), 2000);
+  setTimeout((function(){$('.feed-mail-alert').removeClass(alertType);}), 3000);
+}
