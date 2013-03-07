@@ -1,6 +1,6 @@
 # encoding: utf-8
 class TopicsController < ApplicationController
-  before_filter :admin_validation, :except => [:likeable, :unlikeable]
+  before_filter :admin_validation, :except => [:likeable, :unlikeable, :subscribe_mail]
 
   # GET /topics
   # GET /topics.json
@@ -38,6 +38,10 @@ class TopicsController < ApplicationController
   # GET /topics/1/edit
   def edit
     @topic = Topic.find(params[:id])
+  end
+
+  def subscribe_mail
+    
   end
 
   def likeable

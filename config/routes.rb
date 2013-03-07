@@ -6,7 +6,9 @@ Houread::Application.routes.draw do
   get  "topics/likeable"
   get  "topics/unlikeable"
 
-  resources :topics
+  resources :topics do
+    post "subscribe_mail", :on => :collection
+  end
 
   get "home/index"
 
