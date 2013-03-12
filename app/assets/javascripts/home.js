@@ -74,28 +74,6 @@ var likeable = function(){
   )
 }
 
-var unlikeable = function(){
-  var fadetime = 900;
-  $(".btn-unlike").click(
-    function(){
-      $.get("/topics/unlikeable",
-          function(data){
-            if (data.status){
-              $(".like-info").css("display","block");
-              $(".like-info").html(data.text);
-              $(".btn-unlike span").html("踩 -" + data.count);
-              $(".like-info").fadeOut(fadetime);
-            }else{
-              $(".like-error-info").css("display","block");
-              $(".like-error-info").html(data.text);
-              $(".like-error-info").fadeOut(fadetime);
-            }
-          },"json"
-      )
-    }
-  )
-}
-
 var feedMailAlert = function(alertType, alertMess){
   $('.feed-mail-alert').html(alertMess);
   $('.feed-mail-alert').addClass(alertType);

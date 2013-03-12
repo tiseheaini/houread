@@ -1,6 +1,6 @@
 # encoding: utf-8
 class TopicsController < ApplicationController
-  before_filter :admin_validation, :except => [:likeable, :unlikeable, :subscribe_mail]
+  before_filter :admin_validation, :except => [:likeable, :subscribe_mail]
 
   # GET /topics
   # GET /topics.json
@@ -18,7 +18,6 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     @topiclike = @topic.likeable.to_s.split.length
-    @topicunlike = @topic.unlikeable.to_s.split.length
     @time = 120 - Time.now.min
 
     render :template => 'home/index'
@@ -81,20 +80,6 @@ class TopicsController < ApplicationController
       @count = @topic.likeable.to_s.split.length.to_s
       @topic.save
       render :json => {:status => true, :text => "顶 +1", :count => @count}
-    else
-      render :json => {:status => false, :text => "你已经点击过了"}
-    end
-  end
-
-  def unlikeable
-    @topic = Topic.last
-    @topicarr = @topic.unlikeable.to_s.split
-
-    if !@topicarr.include?(request.remote_ip.to_s)
-      @topic.unlikeable = @topic.unlikeable.to_s + request.remote_ip.to_s + ' '
-      @count = @topic.unlikeable.to_s.split.length.to_s
-      @topic.save
-      render :json => {:status => true, :text => "踩 -1", :count => @count}
     else
       render :json => {:status => false, :text => "你已经点击过了"}
     end
