@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130305132110) do
+ActiveRecord::Schema.define(:version => 20130312145154) do
 
   create_table "feed_mails", :force => true do |t|
     t.string   "email"
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20130305132110) do
     t.string   "title",      :null => false
     t.text     "body",       :null => false
     t.text     "likeable"
-    t.text     "unlikeable"
     t.integer  "timeint"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
