@@ -84,10 +84,8 @@ body {
 .like-info {
   width: 44px;
   height: 17px;
-  padding-left: 23px;
   padding-right: 7px;
   padding-top: 5px;
-  margin-left: 19px;
 }
 .like-error-info {
   width: 98px;
