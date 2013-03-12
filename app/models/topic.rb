@@ -1,5 +1,5 @@
 class Topic < ActiveRecord::Base
-  attr_accessible :title, :body, :like, :unlike, :timeint
+  attr_accessible :title, :body, :likeable, :timeint
 
   ## add_timeint 用于将传进来的timeint加1，且考虑时间问题
   def self.add_timeint(timeint)
