@@ -10,6 +10,9 @@
 *.swo
 # Ignore the default SQLite database.
 /db/*.sqlite3
+/public/assets/*
+/Capfile
+/config/deploy.rb
 
 # Ignore all logfiles and tempfiles.
 /log/*.log

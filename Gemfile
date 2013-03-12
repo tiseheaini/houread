@@ -14,6 +14,8 @@ gem 'devise'
 
 group :development do
   gem 'thin'
+  gem 'capistrano'
+  gem 'rvm-capistrano'
 end
 
 # Gems used only for assets and not required
@@ -34,7 +36,7 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
