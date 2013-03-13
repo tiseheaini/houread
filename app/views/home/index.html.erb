@@ -1,34 +1,5 @@
-<div id="home-main" class="clearfix">
-	<script type="text/javascript">
-          $(document).ready(countdown)
-          $(document).ready(likeable)
-	</script>
-	<div class="hero-unit home-main-cont span8">
-	  <div class="h-topic-title">
-	    <%= (@topic.title).html_safe %>
-	  </div>
-	  <div class="h-topic-articleline"></div>
-	  <%= (@topic.body).html_safe %>
-
-	  <div class="article-foot">
-	    <div class="likebox-info">
-	      <div class="alert alert-error like-info" style="display:none"></div>
-	      <div class="alert alert-error like-error-info" style="display:none"></div>
-	    </div>
-	    <%= render :partial => "shared/home/likebox" %>
-	    <%= render :partial => "shared/home/siteshared" %>
-	    <div id="countdown" style="color:red;padding-top:7px;" mce_style="color:red"></div>
-	  </div>
-	</div>
-
-	<div class="hero-unit home-main-notice span3">
-	  <span>公告</span>
-	  <div class="home-noticeline"></div>
-	  <span>我们每个小时都会为你提供最好看的文章、图片、音乐，敬请期待</span>
-	</div>
-	<div class="hero-unit home-main-sidebar span3">
-	  <iframe width="220" height="150" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=220&height=150&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=3003263665&verifier=f79bb626&dpc=1"></iframe>
-	</div>
-  <%= render :partial => "shared/home/feed_mail" %>
-</div>
-<span id="time" style="display:none;"><%= @time %></span>
+<% if @topic.present? %>
+  <%= render :partial => "content" %>
+<% else %>
+  <%= render :partial => "no_content" %>
+<% end %>
