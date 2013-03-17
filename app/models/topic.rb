@@ -17,7 +17,7 @@ class Topic < ActiveRecord::Base
       when 0..8
         timeint = time.year.to_s + ("%02d" % time.month.to_s) + ("%02d" % time.day.to_s) + "00"
       when 9..20
-        timeint = time.year.to_s + ("%02d" % time.month.to_s) + ("%02d" % time.day.to_s) + ("%02d" % ((time.hour - 9)/2).to_s)
+        timeint = time.year.to_s + ("%02d" % time.month.to_s) + ("%02d" % time.day.to_s) + ("%02d" % (time.hour - 9).to_s)
       when 21..23
         time = time.tomorrow
         timeint = time.year.to_s + ("%02d" % time.month.to_s) + ("%02d" % time.day.to_s) + "00"
