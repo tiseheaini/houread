@@ -18,7 +18,7 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     @topiclike = @topic.likeable.to_s.split.length
-    @time = 120 - Time.now.min
+    @time = 3600 - (Time.now.min * 60 + Time.now.sec)
 
     render :template => 'home/index'
   end
