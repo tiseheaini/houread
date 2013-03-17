@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @time = 120 - Time.now.min
+    @time = 3600 - (Time.now.min * 60 + Time.now.sec)
 
     current_hour = Time.now.hour
     if (9..21).include?(current_hour)
