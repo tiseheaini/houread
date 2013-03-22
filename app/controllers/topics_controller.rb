@@ -1,6 +1,6 @@
 # encoding: utf-8
 class TopicsController < ApplicationController
-  before_filter :admin_validation, :except => [:likeable, :subscribe_mail]
+  before_filter :admin_validation, :except => [:encoding, :likeable, :subscribe_mail]
 
   # GET /topics
   # GET /topics.json
@@ -18,6 +18,16 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     @topiclike = @topic.likeable.to_s.split.length
+    @time = 3600 - (Time.now.min * 60 + Time.now.sec)
+
+    render :template => 'home/index'
+  end
+
+  def encoding
+    coding = Topic.decoding(params[:encoding])
+
+    @topic = Topic.where(:timeint => coding).first
+    @topiclike = @topic.likeable.to_s.split.length if @topic.present?
     @time = 3600 - (Time.now.min * 60 + Time.now.sec)
 
     render :template => 'home/index'

@@ -1,6 +1,16 @@
 class Topic < ActiveRecord::Base
   attr_accessible :title, :body, :likeable, :timeint
 
+  ## encoding 用于在发微博时生成 base64加密字符串,并删掉串后面的 \n
+  def self.encoding(timeint)
+    Base64.encode64(timeint.to_s + sprintf("%02d", rand(99)))[0..15]
+  end
+
+  ## decoding 用于 topics#ending中解密生成查询字符串
+  def self.decoding(encoding)
+    Base64.decode64(encoding)[0..9]
+  end
+
   ## add_timeint 用于将传进来的timeint加1，且考虑时间问题
   def self.add_timeint(timeint)
     if timeint[8..9].to_i >= 11

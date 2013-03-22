@@ -1,6 +1,7 @@
 Houread::Application.routes.draw do
   devise_for :users
 
+  match 'yuedu/:encoding' => 'topics#encoding', :via => :get, :as => :yuedu_encoding
   resources :topics do
     post "subscribe_mail", :on => :collection
     get  "likeable", :on => :collection
