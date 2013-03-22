@@ -1,13 +1,9 @@
 Houread::Application.routes.draw do
   devise_for :users
 
-  post "user/sign_up_action"
-  get  "user/sign_up"
-  get  "topics/likeable"
-  get  "topics/unlikeable"
-
   resources :topics do
     post "subscribe_mail", :on => :collection
+    get  "likeable", :on => :collection
   end
 
   get "home/index"
