@@ -13,11 +13,12 @@ body {
   background-color:#474847;
   padding-top: 16px;
 }
-.nav-logo {
+.nav-logo a {
   height: 29px;
   font-size: 23px;
   color: white;
   float:left;
+  text-decoration: none;
 }
 .nav-userbar {
   float:right;
