@@ -14,6 +14,8 @@ gem 'devise'
 
 group :development do
   gem 'thin'
+  ## 删除 html标签
+  gem 'sanitize'
 end
 
 group :production do

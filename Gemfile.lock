@@ -61,6 +61,7 @@ GEM
     mini_magick (3.4)
       subexec (~> 0.2.1)
     multi_json (1.3.6)
+    nokogiri (1.5.9)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -92,6 +93,8 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
+    sanitize (2.0.3)
+      nokogiri (>= 1.4.4, < 1.6)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -128,6 +131,7 @@ DEPENDENCIES
   jquery-rails
   rails (= 3.2.8)
   rails_kindeditor (~> 0.3.0)
+  sanitize
   sqlite3
   therubyracer
   thin
