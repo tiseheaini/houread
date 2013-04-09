@@ -3,12 +3,15 @@ class Topic < ActiveRecord::Base
 
   ## encoding 用于在发微博时生成 base64加密字符串,并删掉串后面的 \n
   def self.encoding(timeint)
-    Base64.encode64(timeint.to_s + sprintf("%02d", rand(99))).chomp!
+    rand_int = rand(100..999)
+    encoding_str = (timeint.to_i * rand_int).to_s + rand_int.to_s
+    Base64.encode64(encoding_str).chomp!
   end
 
   ## decoding 用于 topics#ending中解密生成查询字符串
   def self.decoding(encoding)
-    Base64.decode64(encoding)[0..9]
+    decoding_str = Base64.decode64(encoding)
+    (decoding_str[0..-4].to_i / decoding_str[-3..-1].to_i).to_s
   end
 
   ## add_timeint 用于将传进来的timeint加1，且考虑时间问题
