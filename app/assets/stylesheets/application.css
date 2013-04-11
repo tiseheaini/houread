@@ -18,11 +18,14 @@
    width: 360px;
  }
  .footsub-blog {
-   width: 227px;
+   width: 245px;
  }
  .footsub-blog .f-title {
-   padding-left: 31px;
+   padding-left: 25px;
  }
  .footsub-link {
-   width: 160px;
+   width: 230px;
  }
+.f-text {
+  padding-right: 5px;
+}
