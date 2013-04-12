@@ -51,7 +51,7 @@
 				(function() {
 				function show163Window(){
 				var param = [],ustr = [];
-				param[0] = 'link=' + encodeURIComponent(window.location.href);  //link为网站域名
+				param[0] = 'link=' + encodeURIComponent("<%= @share_site %>");  //link为网站域名
 				param[1] = 'source=' + encodeURIComponent(document.title);  //source为网站名称
 				param[2] = 'info=' + encodeURIComponent(document.title) + encodeURIComponent(window.location.href);  //info为转发的文字内容(可选，默认为页面title)
 				param[3] = 'images=';  //images为传过来的图片地址，多个图片地址用","隔开；若为空会自动抓取转发页面图片
