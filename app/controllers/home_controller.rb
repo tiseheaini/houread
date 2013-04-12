@@ -15,7 +15,10 @@ class HomeController < ApplicationController
       #timeint = time.year.to_s + ("%02d" % time.month) + ("%02d" % time.day) + ("%02d" % ((time.hour - 9)/2))
       timeint = Topic.current_timeint(Time.now)
       @topic = Topic.where(:timeint => timeint).first
-      @topiclike = @topic.likeable.to_s.split.length if @topic.present?
+      if @topic.present?
+        @topiclike = @topic.likeable.to_s.split.length
+        @title = Sanitize.clean(@topic.title).strip
+      end
     else
       render :template => 'home/close_content'
     end
