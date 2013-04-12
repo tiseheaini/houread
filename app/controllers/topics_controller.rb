@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
+    @topics = Topic.where('timeint >= :timeint', :timeint => Topic.current_timeint(Time.now))
 
     respond_to do |format|
       format.html # index.html.erb
