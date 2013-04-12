@@ -4,8 +4,9 @@ class HomeController < ApplicationController
 
     current_hour = Time.now.hour
     if (9..21).include?(current_hour)
-      time = Time.now
-      timeint = time.year.to_s + ("%02d" % time.month) + ("%02d" % time.day) + ("%02d" % ((time.hour - 9)/2))
+      #time = Time.now
+      #timeint = time.year.to_s + ("%02d" % time.month) + ("%02d" % time.day) + ("%02d" % ((time.hour - 9)/2))
+      timeint = Topic.current_timeint(Time.now)
       @topic = Topic.where(:timeint => timeint).first
       @topiclike = @topic.likeable.to_s.split.length if @topic.present?
     else
