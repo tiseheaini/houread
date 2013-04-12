@@ -9,13 +9,13 @@ gem 'sqlite3'
 gem 'therubyracer'
 gem 'rails_kindeditor', '~> 0.3.0'
 
+## 删除 html标签
+gem 'sanitize'
 ## devise and user Authentication
 gem 'devise'
 
 group :development do
   gem 'thin'
-  ## 删除 html标签
-  gem 'sanitize'
 end
 
 group :production do
