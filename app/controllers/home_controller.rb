@@ -7,8 +7,10 @@ class HomeController < ApplicationController
       ## 获取分享按钮的地址
       current_timeint = Topic.current_timeint(Time.now)
       share_site_topic = Topic.where(:timeint => current_timeint).first
-      encoding_site = Topic.encoding(share_site_topic.timeint)
-      @share_site = "http://www.shiyueqingxin.com/yuedu/" + encoding_site
+      if share_site_topic.present?
+        encoding_site = Topic.encoding(share_site_topic.timeint)
+        @share_site = "http://www.shiyueqingxin.com/yuedu/" + encoding_site
+      end
       #time = Time.now
       #timeint = time.year.to_s + ("%02d" % time.month) + ("%02d" % time.day) + ("%02d" % ((time.hour - 9)/2))
       timeint = Topic.current_timeint(Time.now)
