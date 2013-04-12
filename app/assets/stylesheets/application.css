@@ -11,6 +11,9 @@
  *= require_self
  *= require_tree .
  */
+ body {
+   line-height: 22px;
+ }
  .footsub-about,.footsub-blog,.footsub-link {
    float:left;
  }
