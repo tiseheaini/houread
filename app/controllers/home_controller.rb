@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     @time = 3600 - (Time.now.min * 60 + Time.now.sec)
 
     current_hour = Time.now.hour
-    if (9..21).include?(current_hour)
+    if (9..20).include?(current_hour)
       ## 获取分享按钮的地址
       current_timeint = Topic.current_timeint(Time.now)
       share_site_topic = Topic.where(:timeint => current_timeint).first
