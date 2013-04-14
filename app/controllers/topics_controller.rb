@@ -86,7 +86,8 @@ class TopicsController < ApplicationController
   end
 
   def likeable
-    @topic = Topic.last
+    current_timeint = Topic.current_timeint(Time.now)
+    @topic = Topic.where(:timeint => current_timeint).first
     @topicarr = @topic.likeable.to_s.split
 
     if !@topicarr.include?(request.remote_ip.to_s)
