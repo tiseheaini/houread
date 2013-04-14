@@ -1,8 +1,4 @@
 <div id="home-main" class="clearfix">
-	<script type="text/javascript">
-          $(document).ready(countdown)
-          $(document).ready(likeable)
-	</script>
 	<div class="hero-unit home-main-cont span8">
 	  <div class="h-topic-title">
 	    <%= (@topic.title).html_safe %>
@@ -32,5 +28,7 @@
 	</div>
   <%= render :partial => "shared/home/feed_mail" %>
   <!--右侧侧边栏-->
+	<script type="text/javascript">
+          $(document).ready(likeable)
+	</script>
 </div>
-<span id="time" style="display:none;"><%= @time %></span>
