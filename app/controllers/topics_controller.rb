@@ -24,7 +24,12 @@ class TopicsController < ApplicationController
   end
 
   def random
-    
+    @topic = Topic.rand_topic
+    encoding_site = Topic.encoding(@topic.timeint)
+    @share_site = "http://www.shiyueqingxin.com/yuedu/" + encoding_site
+    @title = Sanitize.clean(@topic.title).strip
+
+    render :template => 'home/index'
   end
 
   def encoding
