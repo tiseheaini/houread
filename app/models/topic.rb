@@ -43,7 +43,7 @@ class Topic < ActiveRecord::Base
     timeint = timeint.to_s
     if timeint[8..9].to_i <= 0
       time =  Time.local(timeint[0..3], timeint[4..5], timeint[6..7]).yesterday
-      timeint = time.year.to_s + ("%02d" % time.month) + ("%02d" % time.day) + "11"
+      timeint = time.year.to_s + ("%02d" % time.month) + ("%02d" % time.day) + "05"
     else
       timeint = timeint[0..7] + sprintf("%02i", timeint[8..9].to_i - 1)
     end
