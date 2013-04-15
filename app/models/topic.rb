@@ -28,11 +28,11 @@ class Topic < ActiveRecord::Base
   ## current_timeint 用于生成当前时间的timeint串
   def self.current_timeint(time)
     case time.hour
-      when 0..8
+      when 0..7
         timeint = time.year.to_s + ("%02d" % time.month.to_s) + ("%02d" % time.day.to_s) + "00"
-      when 9..20
-        timeint = time.year.to_s + ("%02d" % time.month.to_s) + ("%02d" % time.day.to_s) + ("%02d" % (time.hour - 9).to_s)
-      when 21..23
+      when 8..19
+        timeint = time.year.to_s + ("%02d" % time.month.to_s) + ("%02d" % time.day.to_s) + ("%02d" % ((time.hour - 8)/2).to_s)
+      when 20..23
         time = time.tomorrow
         timeint = time.year.to_s + ("%02d" % time.month.to_s) + ("%02d" % time.day.to_s) + "00"
     end
