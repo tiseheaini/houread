@@ -2,6 +2,7 @@ Houread::Application.routes.draw do
   devise_for :users
 
   match 'yuedu/:encoding' => 'topics#encoding', :via => :get, :as => :yuedu_encoding
+  get   "random" => "topics#random", :as => :random_topics
   resources :topics do
     post "subscribe_mail", :on => :collection
     get  "likeable", :on => :collection

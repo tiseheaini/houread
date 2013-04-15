@@ -1,6 +1,6 @@
 # encoding: utf-8
 class TopicsController < ApplicationController
-  before_filter :admin_validation, :except => [:encoding, :likeable, :subscribe_mail]
+  before_filter :admin_validation, :except => [:random, :encoding, :likeable, :subscribe_mail]
 
   # GET /topics
   # GET /topics.json
@@ -21,6 +21,10 @@ class TopicsController < ApplicationController
     @time = 3600 - (Time.now.min * 60 + Time.now.sec)
 
     render :template => 'home/index'
+  end
+
+  def random
+    
   end
 
   def encoding
