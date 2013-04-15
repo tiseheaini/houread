@@ -13,7 +13,9 @@
 	    </div>
 	    <%= render :partial => "shared/home/likebox" %>
 	    <%= render :partial => "shared/home/siteshared" %>
-	    <div id="countdown" style="color:red;padding-top:7px;" mce_style="color:red"></div>
+      <div class="rand_button" style="float:left;margin-left:85px;">
+        <%= link_to "随机阅读", random_topics_path, :class => "btn btn-info" %>
+      </div>
 	  </div>
 	</div>
 
