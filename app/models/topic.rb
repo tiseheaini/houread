@@ -1,6 +1,17 @@
 class Topic < ActiveRecord::Base
   attr_accessible :title, :body, :likeable, :timeint
 
+  def self.rand_topic
+    @topic = false
+    begin
+      last_id = Topic.last.id
+      @topic = Topic.find(Random.rand(last_id))
+    rescue
+      @topic = Topic.send(:rand_topic)
+    end
+    @topic
+  end
+
   ## encoding 用于在发微博时生成 base64加密字符串,并删掉串后面的 \n
   def self.encoding(timeint)
     rand_int = rand(100..999)
