@@ -95,8 +95,9 @@ class TopicsController < ApplicationController
   end
 
   def likeable
-    current_timeint = Topic.current_timeint(Time.now)
-    @topic = Topic.where(:timeint => current_timeint).first
+    topic_id = params[:topic_id]
+    
+    @topic = Topic.find(topic_id)
     @topicarr = @topic.likeable.to_s.split
 
     if !@topicarr.include?(request.remote_ip.to_s)

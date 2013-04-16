@@ -3,12 +3,13 @@ var likeable = function(){
   var fadetime = 900;
   $(".btn-like").click(
     function(){
-      $.get("/topics/likeable", 
+      var topicId = $(".btn-like").data("topic");
+      $.get("/topics/likeable" + "?" + "topic_id=" + topicId, 
           function(data){
             if (data.status){
               $(".like-info").css("display","block");
               $(".like-info").html(data.text);
-              $(".btn-like span").html("顶 " + data.count);
+              $(".btn-like span").html("喜欢 " + data.count);
               $(".like-info").fadeOut(fadetime);
             }else{
               $(".like-error-info").css("display","block");
