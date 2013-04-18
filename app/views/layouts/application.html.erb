@@ -6,6 +6,7 @@
   <title><%= @title || "我是小清新" %> | 十月清新</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= yield :kindeditor %>
   <%= csrf_meta_tags %>
 </head>
 <body>
