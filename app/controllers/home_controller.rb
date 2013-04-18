@@ -1,4 +1,7 @@
 class HomeController < ApplicationController
+  include Home
+  before_filter :mobile
+
   def index
     ## 获取分享按钮的地址
     current_timeint = Topic.current_timeint(Time.now)
@@ -12,6 +15,14 @@ class HomeController < ApplicationController
     if @topic.present?
       @topiclike = @topic.likeable.to_s.split.length
       @title = Sanitize.clean(@topic.title).strip
+    end
+  end
+
+  private
+
+  def mobile
+    if mobile?
+      redirect_to mobiles_path
     end
   end
 end

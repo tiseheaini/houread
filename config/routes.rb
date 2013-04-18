@@ -1,6 +1,8 @@
 Houread::Application.routes.draw do
   devise_for :users
 
+  get   "mobile" => "mobile#index", :as => :mobiles
+
   match 'yuedu/:encoding' => 'topics#encoding', :via => :get, :as => :yuedu_encoding
   get   "random" => "topics#random", :as => :random_topics
   resources :topics do
