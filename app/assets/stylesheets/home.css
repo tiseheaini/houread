@@ -127,3 +127,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.rand_button {
+  float:left;
+  margin-left: 85px;
+}
