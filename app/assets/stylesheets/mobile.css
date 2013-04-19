@@ -1,4 +1,7 @@
 /*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
+ * Place all the styles related to the matching controller here.
+ * They will automatically be included in application.css.
+ *
+ *= require_self
+ *= require bootstrap.min
 */
