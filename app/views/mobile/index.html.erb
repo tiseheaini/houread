@@ -1,0 +1,5 @@
+<% if @topic.present? %>
+  <%= render :partial => "mobile/share/content" %>
+<% else %>
+  <%= render :partial => "mobile/share/no_content" %>
+<% end %>

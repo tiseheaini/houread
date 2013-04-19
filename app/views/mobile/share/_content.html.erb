@@ -1,0 +1,23 @@
+<div class="well well-large" id="mobile-main">
+  <div class="mobile-title">
+    <%= (@topic.title).html_safe %>
+  </div>
+  <div class="mobile-articleline"></div>
+  <%= (@topic.body).html_safe %>
+
+  <div class="article-foot clearfix">
+    <div class="likebox-info">
+      <div class="alert alert-error like-info" style="display:none"></div>
+      <div class="alert alert-error like-error-info" style="display:none"></div>
+    </div>
+    <%= render :partial => "shared/home/likebox" %>
+    <%= render :partial => "shared/home/siteshared" %>
+    <div class="rand_button">
+      <%= link_to "随机阅读", random_topics_path, :class => "btn btn-info" %>
+    </div>
+  </div>
+  <!-------->
+</div>
+<script type="text/javascript">
+        $(document).ready(likeable)
+</script>
