@@ -17,7 +17,13 @@ class HomeController < ApplicationController
         @topiclike = @topic.likeable.to_s.split.length
         @title = Sanitize.clean(@topic.title).strip
       end
+
+      respond_to do |format|
+        format.html
+        format.xml
+      end
     end
+    ######
   end
 
   MOBILE_USER_AGENTS =  'palm|blackberry|nokia|phone|midp|mobi|symbian|chtml|ericsson|minimo|' +
