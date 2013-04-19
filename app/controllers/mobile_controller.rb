@@ -1,4 +1,5 @@
 class MobileController < ApplicationController
+  include Home
 
   def index
     ## 获取分享按钮的地址
@@ -26,15 +27,19 @@ class MobileController < ApplicationController
   end
 
   def yuedu
-    coding = Topic.decoding(params[:encoding])
-    @share_site = request.url
+    if mobile?
+      coding = Topic.decoding(params[:encoding])
+      @share_site = request.url
 
-    @topic = Topic.where(:timeint => coding).first
-    if @topic.present?
-      @topiclike = @topic.likeable.to_s.split.length
-      @title = Sanitize.clean(@topic.title).strip
+      @topic = Topic.where(:timeint => coding).first
+      if @topic.present?
+        @topiclike = @topic.likeable.to_s.split.length
+        @title = Sanitize.clean(@topic.title).strip
+      end
+
+      render :template => 'mobile/index'
+    else
+      redirect_to yuedu_encoding_path(:encoding => params[:encoding])
     end
-
-    render :template => 'mobile/index'
   end
 end
