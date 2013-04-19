@@ -2,7 +2,7 @@ Houread::Application.routes.draw do
   devise_for :users
 
   scope "/mobile" do
-    get   "yuedu" => "mobile#yuedu", :as => :yuedu_mobiles
+    match "yuedu/:encoding" => "mobile#yuedu", :via => :get, :as => :yuedu_mobiles
     get   "random" => "mobile#random", :as => :random_mobiles
     get   "/" => "mobile#index", :as => :mobiles
   end

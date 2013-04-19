@@ -24,4 +24,17 @@ class MobileController < ApplicationController
 
     render :template => 'mobile/index'
   end
+
+  def yuedu
+    coding = Topic.decoding(params[:encoding])
+    @share_site = request.url
+
+    @topic = Topic.where(:timeint => coding).first
+    if @topic.present?
+      @topiclike = @topic.likeable.to_s.split.length
+      @title = Sanitize.clean(@topic.title).strip
+    end
+
+    render :template => 'mobile/index'
+  end
 end

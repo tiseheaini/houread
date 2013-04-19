@@ -33,7 +33,6 @@ class TopicsController < ApplicationController
   end
 
   def encoding
-    @time = 3600 - (Time.now.min * 60 + Time.now.sec)
     coding = Topic.decoding(params[:encoding])
     @share_site = request.url
 
