@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container top-container">
   <div class="hero-unit topic-main">
     <h2>Listing topics</h2>
 
@@ -6,13 +6,13 @@
 		  <h3>管理列表</h3>
 			<ul class="unstyled">
 				<li><%= link_to "管理任务", topics_path %></li>
-				<li><%= link_to "添加文章", new_topic_path %></li>
+				<li><%= link_to "添加文章", new_topic_path, :target => "_blank" %></li>
 			</ul>
 		</div>
 		<div class="topic-main-cont span8">
       <table class="table">
         <tr>
-          <th>下一个小时出现的文章</th>
+          <th style="font-size: 16px;">下一个小时出现的文章</th>
           <th class="topic-like">喜欢</th>
           <th class="edit"></th>
           <th class="destroy"></th>
@@ -20,10 +20,13 @@
 
       <% @topics.each do |topic| %>
         <tr>
-          <td><%= link_to truncate(strip_tags(topic.body), :length => 80), topic %></td>
-          <td class="like" style="text-align: center;"><%= topic.likeable.to_s.split.length %></td>
-          <td class="edit"><%= link_to '编辑', edit_topic_path(topic) %></td>
-          <td class="destroy"><%= link_to '删除', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td style="font-size: 16px;">
+            <span>标题 ：</span><%= link_to topic.title, topic %><br />
+            <span style="display: block;margin-top:6px;"><%= truncate(strip_tags(topic.body), :length => 120) %></span>
+          </td>
+          <td class="like" style="padding:40px 0;text-align: center;"><%= topic.likeable.to_s.split.length %></td>
+          <td class="edit" style="padding:40px 0;"><%= link_to '编辑', edit_topic_path(topic), :target => "blank", :class => "btn btn-small btn-primary" %></td>
+          <td class="destroy" style="padding:40px 0;"><%= link_to '删除', topic, :class => "btn btn-small btn-danger", method: :delete, data: { confirm: '你确定要删除？' } %></td>
         </tr>
       <% end %>
       </table>

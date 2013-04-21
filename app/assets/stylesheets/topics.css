@@ -8,6 +8,9 @@
   background-color: white;
 	overflow:hidden;
 }
+.top-container {
+  width: 960px;
+}
 .topic-main-sidebar {
   width: 110px;
   margin-left: 0px;
@@ -18,7 +21,7 @@
   height: 35px;
 }
 .topic-main-cont {
-  width: 718px;
+  width: 775px;
   margin-left: 0px;
   float:right;
 }
