@@ -3,20 +3,23 @@
   They will automatically be included in application.css.
 */
 body {
-  background-image:url("main_bg.gif");
+  background-image:url(dyw_size42.jpg);
+  background-repeat:no-repeat;
+  background-position:center top;
+  background-attachment:fixed;
 }
 /**--header navbar stylesheet--**/
 .header {
   background-color:white;
+  opacity: 0.8;
 }
 #home-navbar {
-  background-color:#474847;
   padding-top: 16px;
 }
 .nav-logo a {
   height: 29px;
   font-size: 23px;
-  color: white;
+  color: #333;
   float:left;
   text-decoration: none;
 }
@@ -124,8 +127,9 @@ body {
 }
 .footer-cont {
   width: 840px;
-  margin-left: auto;
-  margin-right: auto;
+  overflow:hidden;
+  margin-top:20px;
+  margin-bottom:10px;
 }
 .rand_button {
   float:left;
