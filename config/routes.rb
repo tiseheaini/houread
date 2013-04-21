@@ -15,6 +15,7 @@ Houread::Application.routes.draw do
   end
 
   get "home/index"
+  match "about" => "home#about"
 
   root :to => 'home#index'
   # The priority is based upon order of creation:
