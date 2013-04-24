@@ -11,6 +11,7 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /public/assets/*
+/public/uploads/*
 /Capfile
 /config/deploy.rb
 /config/database.yml
