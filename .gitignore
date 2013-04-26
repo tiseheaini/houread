@@ -15,6 +15,7 @@
 /Capfile
 /config/deploy.rb
 /config/database.yml
+/config/initializers/setup_mail.rb
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
