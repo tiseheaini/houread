@@ -3,6 +3,7 @@
 	  <div class="h-topic-title">
 	    <%= (@topic.title).html_safe %>
 	  </div>
+      <%= link_to "随机阅读", random_topics_path, :class => "btn btn-danger", :style => "float:right;" %>
 	  <div class="h-topic-articleline"></div>
 	  <%= (@topic.body).html_safe %>
 
