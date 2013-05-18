@@ -1,3 +1,4 @@
 == Welcome to Rails
 
 这是一个小论坛，里面的代码不是很复杂，开源出来，希望对别人有帮助
+网址 http://www.shiyueqingxin.com
