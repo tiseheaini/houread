@@ -82,7 +82,7 @@ body {
   float:right;
 }
 /**--- div.feed-mail stylesheet-**/
-.feed-mail {
+.feed-mail, .sample {
   width: 218px;
   padding: 18px 10px 23px 10px;
   margin-bottom: 30px;
